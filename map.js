@@ -1,4 +1,4 @@
-map.js
+#map.js
 'use strict'
 console.log('Loaded map.js')
 mapboxgl.accessToken='pk.eyJ1IjoidGhlam95bGVlIiwiYSI6ImNrN3BmZnZ5NDBqYjQzbW1pNGs0MWFiejkifQ.9stnbzBJqom6XYjX73VYcA'
