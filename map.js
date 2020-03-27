@@ -2,11 +2,11 @@
 
 console.log('Loaded map.js')
 
-mapboxgl.accessToken = 'YOUR TOKEN HERE'
+mapboxgl.accessToken = 'pk.eyJ1IjoidGhlam95bGVlIiwiYSI6ImNrN3BmZnZ5NDBqYjQzbW1pNGs0MWFiejkifQ.9stnbzBJqom6XYjX73VYcA'
 
 let map = new mapboxgl.Map({
     container: 'map',
-    style: 'YOUR STYLE URL HERE',
+    style: 'mapbox://styles/thejoylee/ck89c4hme003w1ims5f5ktulp',
     center: [-73.96216,40.80779],
     zoom: 16
 })
