@@ -34,16 +34,12 @@ let geolocate = new mapboxgl.GeolocateControl({
 map.addControl(geolocate, 'top-left')
 
 geolocate.on('geolocate', function(event) {
-
-})
-
-map.on('click', function(event) {
     // rat sightings from layer data
-    let features = map.queryRenderedFeatures({layers:['rat-sightings']})
+    let features = map.queryRenderedFeatures({ layers:['rat-sightings'] })
     console.log(features)
     
     // location of the click
-    let current_location = [event.lngLat.lng, event.lngLat.lat]
+    let current_location = [event.coords.longitude, event.coords.latitude]
     console.log(current_location)
     
     // if there aren't any features don't continue
@@ -74,6 +70,12 @@ map.on('click', function(event) {
     // calculate bearing
     let bearing = turf.bearing(turf.point(current_location), turf.point(closest_feature.geometrry.coordinates)
     console.log("Bearing:", bearing)
+    
+    // turn the pointer in that direction
+    var pointer = document.getElementById('pointer')
+    pointer.style.transform = 'rotate(' + bearing + 'deg)'
+    
+    map.flyTo({ center: current_location})
     
 })
     
